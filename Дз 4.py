@@ -1,30 +1,37 @@
 class Dad:
-    def dad(self):
-        print("Від Тата:")
-        self.name = "Володя"
-        self.height = 185
-        print(f" Зріст - {self.height} см")
-        self.weight = 90
-        self.iq = 120
-        print(f" IQ - {self.iq}")
-        self.job = "Doctor"
+    def __init__(self, name, height, weight, iq, job):
+        self.name = name
+        self.height = height
+        self.weight = weight
+        self.iq = iq
+        self.job = job
 
 class Mum:
-    def mum(self):
-        print("Від Мами:")
-        self.name = "Оля"
-        print(f" Ім'я - {self.name}")
-        self.height = 170
-        self.weight = 70
-        print(f" Вага - {self.weight} кг")
-        self.iq = 110
-        self.job = "Programmer"
-        print(f" Робота - {self.job}")
+    def __init__(self, name, height, weight, iq, job):
+        self.name = name
+        self.height = height
+        self.weight = weight
+        self.iq = iq
+        self.job = job
 
 class Daughter(Dad, Mum):
-    pass
+    def __init__(self, name, height, weight, iq, job):
+        super().__init__(name, height, weight, iq, job)
+        print(self.name, self.height, self.weight, self.iq, self.job)
+        self.name = name
+        self.height = height
+        self.weight = weight
+        self.iq = iq
+        self.job = job
 
-daughter = Daughter()
 
-daughter.dad()
-daughter.mum()
+
+
+daughter = Daughter("Оля", 185, 70, 120, "Programmer")
+mum = Mum("Оля", 170, 70, 110, "Programmer")
+dad = Dad("Володя", 185, 90, 120, "Doctor")
+
+
+
+
+
